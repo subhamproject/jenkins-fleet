@@ -1,0 +1,15 @@
+version: '3.0'
+services:
+
+   fleet:
+     user: "${USERID}:${GROUPID}"
+     build: build/.
+     image: jenkins-fleet:latest
+     volumes:
+      - /etc/passwd:/etc/passwd:ro
+      - /etc/group:/etc/group:ro
+      - "${JENKINS_HOME}:${JENKINS_HOME}:rw"
+      - "${WORKSPACE}:${WORKSPACE}:rw"
+     environment:
+      ARCH: $ARCH
+      REGION: $REGION
