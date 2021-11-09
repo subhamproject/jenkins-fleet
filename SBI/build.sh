@@ -13,4 +13,4 @@ docker-compose -f builder.yml run \
       --rm -w "$WORKSPACE" \
       --name "$CONTAINER_NAME" \
       -e ARCH=$ARCH -e REGION=$REGION \
-      jenkins-fleet
+      fleet
